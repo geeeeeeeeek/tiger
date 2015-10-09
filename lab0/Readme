@@ -1,0 +1,25 @@
+Project Name:
+	Straight-Line Program Interpreter
+
+Project Specification:
+	Please See PROGRAM Section, Chapter One, Modern Compiler Implementation in C.
+	(Page 12 for English Version, Page Idontknow for Chinese Version.:))
+
+	Write your code in main.c, and run gradeMe.sh to see the result.
+
+Due Date:
+	23:59, 27th September, 2015
+
+Submission:
+	make a tarball,e.g: 12302010001.tar, which contains main.c and a document.
+	Then upload to FTP_12SS_COMPILER/WORK_UPLOAD/lab0
+
+
+You should all use the same format:
+First put all the files you need to submit in the directory named by your student number, e.g. 12302010001.
+Second come to the parent directory of 12302010001, and use the following command "tar cvf 12302010001.tar 12302010001"
+to compress it to 12302010001.tar.
+
+Note: Standard Test Platform is Red Hat 9.
+
+TA in Charge: Zhang Xiaohan  xh_zhang@fudan.edu.cn

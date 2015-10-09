@@ -1,0 +1,13 @@
+>> Right Prog Section:
+the maximum number of arguments of any print statement is 3
+8 7
+80
+85 85 84
+850
+>> Error Prog Section:
+the maximum number of arguments of any print statement is 3
+8 7
+80
+85 85 84
+850
+[Error] Identifier c does not exist!
