@@ -1,0 +1,13 @@
+ whileExp(
+  seqExp(
+   expList(
+    opExp(
+     GREAT,
+     intExp(10),
+     intExp(5)),
+    expList())),
+  opExp(
+   PLUS,
+   intExp(5),
+   intExp(6)))
+
