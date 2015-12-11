@@ -1,14 +1,11 @@
 #ifndef SEMANT_H
 #define SEMANT_H
-// #include <stdio.h>
-// #include "util.h"
-// #include "symbol.h"
-// #include "types.h"
-// #include "absyn.h"
+
 #include "env.h"
 typedef void *Tr_exp;
 
 string immutable;
+int reset;
 
 struct expty {Tr_exp exp; Ty_ty ty; } ;
 
@@ -24,5 +21,6 @@ void         transDec (S_table venv, S_table tenv, A_dec d);
 bool assertSameType(Ty_ty expected,Ty_ty actual);
 
 Ty_ty actual_ty(Ty_ty ty);
+Ty_tyList makeFormalTyList(S_table tenv, A_fieldList a_fielfList);
 
 #endif
