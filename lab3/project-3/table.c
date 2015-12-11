@@ -19,12 +19,12 @@ struct TAB_table_ {
 
 static binder Binder(void *key, void *value, binder next, void *prevtop)
 {binder b = checked_malloc(sizeof(*b));
- b->key = key; b->value=value; b->next=next; b->prevtop = prevtop; 
+ b->key = key; b->value=value; b->next=next; b->prevtop = prevtop;
  return b;
 }
 
 TAB_table TAB_empty(void)
-{ 
+{
  TAB_table t = checked_malloc(sizeof(*t));
  int i;
  t->top = NULL;
