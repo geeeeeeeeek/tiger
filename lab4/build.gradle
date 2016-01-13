@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+repositories {
+		flatDir{
+			dirs 'lib'	
+		}
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.smali:dexlib2:2.0.3'
+}
+sourceCompatibility = '1.7'
+version = '1.0'
+jar {
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    manifest {
+        attributes('Implementation-Title': 'Dex Analysis Framework',
+                   'Implementation-Version': version,
+			'Main-Class': 'Main',
+		)
+    }
+}
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}     
