@@ -6,25 +6,25 @@ import java.io.PrintWriter;
  * Created by xw on 15-10-26.
  */
 public class GraphWriter {
-    public static void print(Graph g, String filePath){
-        if (g == null || filePath == null){
+    public static void print(Graph g, String filePath) {
+        if (g == null || filePath == null || filePath.indexOf("dpg") == 0) {
             return;
         }
 
         PrintWriter out = null;
         try {
             out = new PrintWriter(filePath);
-            StringBuilder sb= new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.append("digraph callGraph {\n");
             sb.append("\tnode [shape=rectangle]\n");
-            for (Node node : g.nodes){
+            for (Node node : g.nodes) {
                 sb.append("\t" + node.hashCode() + "  [label=\""
                         + node.toString().replace("\"", "\\\"") + "\"]\n");
             }
-            for (Node node : g.nodes){
-                for (Edge edge : node.out){
+            for (Node node : g.nodes) {
+                for (Edge edge : node.out) {
                     StringBuilder contextLabel = new StringBuilder();
-                    for (Context context : edge.contexts){
+                    for (Context context : edge.contexts) {
                         contextLabel.append(context.toString() + "\n");
                     }
                     sb.append("\t" + edge.src.hashCode() + " -> "
@@ -35,10 +35,10 @@ public class GraphWriter {
             sb.append("}");
             out.print(sb);
             out.flush();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (out != null){
+            if (out != null) {
                 out.close();
             }
         }
